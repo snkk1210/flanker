@@ -16,17 +16,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (is_uploaded_file($_FILES['scenariofile']['tmp_name'])) {
         $uploaddir = '../upload/';
         $uploadfile = $uploaddir . basename($_FILES['scenariofile']['name']);
-        if (!move_uploaded_file($_FILES['']['tmp_name'], $uploadfile)) {
+        if (!move_uploaded_file($_FILES['scenariofile']['tmp_name'], $uploadfile)) {
             echo "File upload has failed.\n";
         }
     } else {
-        if (isset($_POST['posted'])){
-            $uploadfile = $_POST['posted'];
-        } else {
-            echo "File does not exist.\n";
-        }
+        //
     }
-
     echo "<div>";
     echo "<form enctype=\"multipart/form-data\" action=\"\" method=\"POST\">";
     echo "<input name=\"scenariofile\" type=\"file\" />";

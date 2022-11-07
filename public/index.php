@@ -9,7 +9,7 @@
     <body>
 
         <?php
-        require('../lib/jmeter.php');
+        require('../lib/JMeter.php');
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if (is_uploaded_file($_FILES['scenariofile']['tmp_name'])) {
                 $uploaddir = '../upload/';

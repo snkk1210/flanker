@@ -33,7 +33,7 @@
         <?php
 
         $scenariolist = JMeter::getScenarioFileList();
-        var_dump($scenariolist);
+        var_dump($scenariolist[0]);
 
         ?>
 

@@ -30,17 +30,21 @@
             </form>
         </div>
 
-
-        <td>
-            <select name="scenario" id="" class="">
-                <?php
-                $scenariolists = JMeter::getScenarioFileList();
-                foreach ( $scenariolists as $scenariolist ) {
-                    echo '<option value="', $scenariolist, '">', $scenariolist, '</option>';
-                }
-                ?>
-            </select>
-        </td>
+        <div>
+            <form action="" method="GET">
+                <td>
+                    <select name="scenario" id="" class="">
+                        <?php
+                        $scenariolists = JMeter::getScenarioFileList();
+                        foreach ( $scenariolists as $scenariolist ) {
+                            echo '<option value="', $scenariolist, '">', $scenariolist, '</option>';
+                        }
+                        ?>
+                    </select>
+                    <input type="submit" value="run" />
+                </td>
+            </form>
+        </div>
 
     </body>
 </html>

@@ -30,5 +30,11 @@
             </form>
         </div>
 
+        <?php
+        
+        $scenariolist = JMeter::getScenarioFileList()
+
+        ?>
+
     </body>
 </html>

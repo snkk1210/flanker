@@ -24,6 +24,25 @@ class JMeter
         //
     }
 
+    /**
+     * NOTE: upload 配下のシナリオを取得
+     */
+    public static function getScenarioFileList(){
+        $list = array();
+        $curdir = getcwd();
+        $uploaddir = $curdir . "/../upload";
+        $dhandle = opendir($uploaddir);
+        if ($dhandle){
+            while (false !== ($fname = readdir($dhandle))){
+                if ($fname != '.' && $fname != '..' && $fname != '.gitkeep' && $fname != '.gitignore'){
+                    $list[] = $fname;
+                }
+            }
+            closedir($dhandle);
+        }
+        return $list;
+    }
+
 }
 
 ?>

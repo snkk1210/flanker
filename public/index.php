@@ -23,12 +23,12 @@
         }
         ?>
 
-        <div>;
-            <form enctype="multipart/form-data" action="" method="POST">;
-                <input name="scenariofile" type="file" />;
-                <input type="submit" value="upload" />";
-            </form>;
-        </div>;   
+        <div>
+            <form enctype="multipart/form-data" action="" method="POST">
+                <input name="scenariofile" type="file" />
+                <input type="submit" value="upload" />
+            </form>
+        </div>
 
     </body>
 </html>

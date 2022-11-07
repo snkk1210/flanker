@@ -31,8 +31,9 @@
         </div>
 
         <?php
-        
-        $scenariolist = JMeter::getScenarioFileList()
+
+        $scenariolist = JMeter::getScenarioFileList();
+        var_dump($scenariolist);
 
         ?>
 

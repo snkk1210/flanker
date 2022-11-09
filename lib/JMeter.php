@@ -21,7 +21,7 @@ class JMeter
      */
     public function run()
     {
-        //
+        $command = "/usr/local/jmeter/bin/jmeter -Dsun.net.inetaddr.ttl=0 -n -t $this->scenario -j ${logdir}/${optime}.log -l ${logdir}/${optime}.jtl -e -o ${logdir}/${optime}/ -r";
     }
 
     /**

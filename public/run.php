@@ -20,10 +20,9 @@
 
             $instance = new JMeter($scenario, true, $optime);
             $opt = $instance->run($today, $optime, $logdir);
-            print_r($opt);
-            echo $optime;
         }
         ?>
+        <textarea readonly><?php print_r($opt) ?></textarea>
 
     </body>
 </html>

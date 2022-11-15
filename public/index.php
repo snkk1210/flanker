@@ -31,7 +31,7 @@
         </div>
 
         <div>
-            <form action="" method="GET">
+            <form action="run.php" method="GET">
                 <td>
                     <select name="scenario" id="" class="">
                         <?php

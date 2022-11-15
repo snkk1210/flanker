@@ -21,7 +21,11 @@ class JMeter
      */
     public function run()
     {
+        $today = date('Ymd');
+        $optime = date('Ymd-His');
+        $logdir = "/var/www/html/$today";
         $command = "/usr/local/jmeter/bin/jmeter -Dsun.net.inetaddr.ttl=0 -n -t $this->scenario -j ${logdir}/${optime}.log -l ${logdir}/${optime}.jtl -e -o ${logdir}/${optime}/ -r";
+        echo "$command";
     }
 
     /**

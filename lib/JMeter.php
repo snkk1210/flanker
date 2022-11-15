@@ -10,23 +10,18 @@ class JMeter
      * @param string $scenario
      * @param bool   $worker_flag
      */
-    public function __construct(string $scenario, bool $worker_flag, string $optime) 
+    public function __construct(string $scenario, bool $worker_flag) 
     {
         $this->scenario = $scenario;
         $this->worker_flag = $worker_flag;
-        $this->optime = $optime;
     }
 
     /**
      *
      */
-    public function run()
-    {
-        $today = date('Ymd');
-        $logdir = "/var/www/html/$today";
-
-        if (!is_dir($logdir)){mkdir("$logdir", 0700);};
-        $cmd = "/usr/local/jmeter/bin/jmeter -Dsun.net.inetaddr.ttl=0 -n -t $this->scenario -j ${logdir}/$this->optime.log -l ${logdir}/$this->optime.jtl -e -o ${logdir}/$this->optime/ -r";
+    public function run(string $today, string $optime, string $logdir)
+    { 
+        $cmd = "/usr/local/jmeter/bin/jmeter -Dsun.net.inetaddr.ttl=0 -n -t $this->scenario -j ${logdir}/${optime}.log -l ${logdir}/${optime}.jtl -e -o ${logdir}/${optime}/ -r";
         exec($cmd, $opt);
         return $opt;
     }

@@ -13,9 +13,13 @@
         if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['scenario'])) {
             $scenario = "../upload/" . $_GET['scenario'];
 
+            $today = date('Ymd');
             $optime = date('Ymd-His');
+            $logdir = "/var/www/html/$today";
+            if (!is_dir($logdir)){mkdir("$logdir", 0700);};
+
             $instance = new JMeter($scenario, true, $optime);
-            $opt = $instance->run();
+            $opt = $instance->run($today, $optime, $logdir);
             print_r($opt);
             echo $optime;
         }

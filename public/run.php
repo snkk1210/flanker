@@ -11,10 +11,13 @@
         <?php
         require('../lib/JMeter.php');
         if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['scenario'])) {
-            $scenario = $_GET['scenario'];
+            $scenario = "../upload/" . $_GET['scenario'];
 
-            $instance = new JMeter($scenario, true);
-            $instance->run();
+            $optime = date('Ymd-His');
+            $instance = new JMeter($scenario, true, $optime);
+            $opt = $instance->run();
+            print_r($opt);
+            echo $optime;
         }
         ?>
 

@@ -23,6 +23,7 @@
         }
         ?>
         <textarea readonly><?php print_r($opt) ?></textarea>
+        <?php echo "http://" . $_SERVER[ "SERVER_ADDR" ] .  "/" . $today . "/" . $optime ?>
 
     </body>
 </html>

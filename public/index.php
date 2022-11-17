@@ -41,10 +41,11 @@
                         }
                         ?>
                     </select>
-                    <input type="submit" value="run" />
+                    <input type="submit" value="run" onclick="loading()" />
                 </td>
             </form>
         </div>
-
+        <div class="spinner" id="spinner"></div>
+        <script src="js/loading.js"></script>
     </body>
 </html>

@@ -24,7 +24,7 @@
             $result_url = "http://" . $_SERVER[ "SERVER_ADDR" ] .  "/" . $today . "/" . $optime;
         }
         ?>
-        <textarea readonly><?php print_r($opt) ?></textarea>
+        <textarea class="results" readonly><?php print_r($opt) ?></textarea>
         <input type="button" value="Show Results" id="showResults">
 
         <script>
@@ -33,6 +33,6 @@
                 open('<?php echo $result_url; ?>');
             });
         </script>
-
+        <script src="js/results.js"></script>
     </body>
 </html>

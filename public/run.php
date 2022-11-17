@@ -20,10 +20,19 @@
 
             $instance = new JMeter($scenario, true, $optime);
             $opt = $instance->run($today, $optime, $logdir);
+
+            $result_url = "http://" . $_SERVER[ "SERVER_ADDR" ] .  "/" . $today . "/" . $optime;
         }
         ?>
         <textarea readonly><?php print_r($opt) ?></textarea>
-        <?php echo "http://" . $_SERVER[ "SERVER_ADDR" ] .  "/" . $today . "/" . $optime ?>
+        <input type="button" value="Show Results" id="showResults">
+
+        <script>
+            let showResults = document.getElementById('showResults');
+            showResults.addEventListener('click', () => {
+                open('<?php echo $result_url; ?>');
+            });
+        </script>
 
     </body>
 </html>

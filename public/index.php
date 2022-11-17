@@ -11,21 +11,21 @@
         <?php
         require('../lib/JMeter.php');
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            if (is_uploaded_file($_FILES['scenariofile']['tmp_name'])) {
+            if (is_uploaded_file($_FILES['scenariofile']['tmp_name']) && pathinfo($_FILES['scenariofile']['name'], PATHINFO_EXTENSION) == "jmx") {
                 $uploaddir = '../upload/';
                 $uploadfile = $uploaddir . basename($_FILES['scenariofile']['name']) . ":" . date('Ymd-His');
                 if (!move_uploaded_file($_FILES['scenariofile']['tmp_name'], $uploadfile)) {
                     echo "File upload has failed.\n";
                 }
             } else {
-                //
+                echo "Upload File must be jmx.\n";
             }
         }
         ?>
 
         <div>
             <form enctype="multipart/form-data" action="" method="POST">
-                <input name="scenariofile" type="file" />
+                <input name="scenariofile" type="file" accept=".jmx" />
                 <input type="submit" value="upload" />
             </form>
         </div>

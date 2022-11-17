@@ -7,6 +7,9 @@
         <link rel="stylesheet" href="style.css" type="text/css">
     </head>
     <body>
+        <div>
+            <h1 class="title"><a href="/" rel="home">Flanker</a></h1>
+        </div>
 
         <?php
         require('../lib/JMeter.php');

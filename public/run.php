@@ -13,7 +13,7 @@
 
         <?php
         require('../lib/JMeter.php');
-        
+
         session_start();
         if(isset($_SESSION['loadflag'])){
             header('Location: /');
@@ -26,6 +26,10 @@
         if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['scenario'])) {
             $scenario = "../upload/" . $_GET['scenario'];
 
+            $request_referer = parse_url($_SERVER['HTTP_REFERER']);
+            $request_host = $request_referer["host"];
+            
+
             $today = date('Ymd');
             $optime = date('His') . ":" . $_GET['scenario'];
             $logdir = "/var/www/html/$today";
@@ -34,7 +38,7 @@
             $instance = new JMeter($scenario, true);
             $opt = $instance->run($today, $optime, $logdir);
 
-            $result_url = "http://" . $_SERVER[ "SERVER_ADDR" ] .  "/" . $today . "/" . $optime;
+            $result_url = "http://" . $request_host .  "/" . $today . "/" . $optime;
         }
         ?>
         <textarea class="results" readonly><?php print_r($opt) ?></textarea>

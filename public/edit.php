@@ -11,10 +11,22 @@
             <h1 class="title"><a href="/" rel="home">Flanker</a></h1>
         </div>
 
+        <?php
+        require('../lib/JMeter.php');
+        if ($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST["remote_hosts"])) {
+            echo JMeter::setRemoteHostRaw($_POST["remote_hosts"]);
+            /** 
+            if (!JMeter::setRemoteHostRaw($_POST["remote_hosts"])) {
+                echo "update has failed.\n";
+            }
+            */
+        }
+        
+        ?>
+
         <div>
             <form enctype="multipart/form-data" action="" method="POST">
                 <?php
-                require('../lib/JMeter.php');
                 $remote_hosts_csv = JMeter::getRemoteHostRaw();
                 ?>
                 <textarea name="remote_hosts"><?php echo $remote_hosts_csv ?></textarea>

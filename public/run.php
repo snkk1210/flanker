@@ -13,6 +13,16 @@
 
         <?php
         require('../lib/JMeter.php');
+        
+        session_start();
+        if(isset($_SESSION['loadflag'])){
+            header('Location: /');
+            session_unset();
+            exit;
+          }else{
+            $_SESSION['loadflag'] = "true";
+          }
+
         if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['scenario'])) {
             $scenario = "../upload/" . $_GET['scenario'];
 

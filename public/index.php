@@ -48,7 +48,7 @@
                         ?>
                     </select>
                     <input type="submit" value="start" onclick="loading()" id="run" formaction="run.php" />
-                    <input type="submit" value="delete" onclick="deleteAlert()" id="delete" formaction="delete.php" />
+                    <input type="submit" value="delete" onclick="deleteAlert(event);return false;" id="delete" formaction="delete.php" />
                 </td>
             </form>
         </div>

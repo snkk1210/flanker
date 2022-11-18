@@ -99,7 +99,6 @@ class JMeter
         exec($cmd, $opt, $result_code);
 
         return $result_code;
-        //return $cmd;
     }
 
 }

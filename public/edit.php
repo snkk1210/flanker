@@ -14,12 +14,10 @@
         <?php
         require('../lib/JMeter.php');
         if ($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST["remote_hosts"])) {
-            echo JMeter::setRemoteHostRaw($_POST["remote_hosts"]);
-            /** 
-            if (!JMeter::setRemoteHostRaw($_POST["remote_hosts"])) {
+            if (!JMeter::setRemoteHostRaw($_POST["remote_hosts"]) == 0) {
                 echo "update has failed.\n";
             }
-            */
+            header('Location: /');
         }
         
         ?>

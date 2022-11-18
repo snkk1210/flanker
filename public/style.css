@@ -1,3 +1,8 @@
+button, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+}
+
 .results {
     display: inline-block;
     vertical-align: top;

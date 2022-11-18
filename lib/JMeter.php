@@ -26,6 +26,14 @@ class JMeter
         return $opt;
     }
 
+    public function delete()
+    { 
+        if(!unlink($this->scenario)){
+            error_log("Scenario delete has failed ");
+        }
+        return $opt;
+    }
+
     /**
      * NOTE: upload 配下のシナリオを取得
      */

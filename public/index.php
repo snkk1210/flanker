@@ -21,10 +21,10 @@
                 $uploaddir = '../upload/';
                 $uploadfile = $uploaddir . basename($_FILES['scenariofile']['name']) . ":" . date('Ymd-His');
                 if (!move_uploaded_file($_FILES['scenariofile']['tmp_name'], $uploadfile)) {
-                    echo "File upload has failed.\n";
+                    error_log("File upload has failed.");
                 }
             } else {
-                echo "Upload File must be jmx.\n";
+                error_log("Upload File must be jmx.");
             }
         }
         ?>
@@ -37,7 +37,7 @@
         </div>
 
         <div>
-            <form action="run.php" method="GET">
+            <form method="GET">
                 <td>
                     <select name="scenario" id="" class="">
                         <?php
@@ -47,12 +47,14 @@
                         }
                         ?>
                     </select>
-                    <input type="submit" value="start" onclick="loading()" id="run" />
+                    <input type="submit" value="start" onclick="loading()" id="run" formaction="run.php" />
+                    <input type="submit" value="delete" onclick="deleteAlert()" id="delete" formaction="delete.php" />
                 </td>
             </form>
         </div>
         <div class="spinner" id="spinner"></div>
         <script src="js/loading.js"></script>
+        <script src="js/common.js"></script>
 
         <div>
             <a href="/edit.php">Edit</a>

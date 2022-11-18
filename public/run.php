@@ -21,7 +21,6 @@
 
             $request_referer = parse_url($_SERVER['HTTP_REFERER']);
             $request_host = $request_referer["host"];
-            
 
             $today = date('Ymd');
             $optime = date('His') . ":" . $_GET['scenario'];

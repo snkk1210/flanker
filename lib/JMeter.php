@@ -86,7 +86,7 @@ class JMeter
         exec($cmd, $opt);
         $remote_hosts_csv = str_replace('remote_hosts=', '', $opt);
 
-        return $remote_hosts_csv;
+        return $remote_hosts_csv[0];
     }
 
 }

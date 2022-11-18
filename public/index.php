@@ -52,6 +52,7 @@
         <script src="js/loading.js"></script>
 
         <div>
+            <a href="/edit.php">Edit</a>
             <table border='1'>
             <?php
                 $remote_hosts = JMeter::getRemoteHost();

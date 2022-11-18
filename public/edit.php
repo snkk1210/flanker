@@ -11,12 +11,16 @@
             <h1 class="title"><a href="/" rel="home">Flanker</a></h1>
         </div>
 
-        <?php
-        require('../lib/JMeter.php');
-
-        $remote_hosts_csv = JMeter::getRemoteHostRaw();
-        ?>
-        <textarea><?php echo $remote_hosts_csv ?></textarea>
+        <div>
+            <form enctype="multipart/form-data" action="" method="POST">
+                <?php
+                require('../lib/JMeter.php');
+                $remote_hosts_csv = JMeter::getRemoteHostRaw();
+                ?>
+                <textarea name="remote_hosts"><?php echo $remote_hosts_csv ?></textarea>
+                <input type="submit" value="update" />
+            </form>
+        </div>
 
     </body>
 </html>

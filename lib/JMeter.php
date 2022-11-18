@@ -89,6 +89,18 @@ class JMeter
         return $remote_hosts_csv[0];
     }
 
+    /**
+     * 
+     */
+    public static function setRemoteHostRaw(string $remote_hosts_csv)
+    {
+        $properties_file = "../../../../../usr/local/jmeter/bin/jmeter.properties";
+        $cmd = "sed -i -e 's/^remote_hosts\(.*\)/remote_hosts=$remote_hosts_csv/g' $properties_file";
+        exec($cmd, $opt, $result_code);
+
+        return $result_code;
+    }
+
 }
 
 ?>

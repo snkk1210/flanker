@@ -17,11 +17,11 @@
             $scenario = "../upload/" . $_GET['scenario'];
 
             $today = date('Ymd');
-            $optime = date('Ymd-His');
+            $optime = date('His') . ":" . $_GET['scenario'];
             $logdir = "/var/www/html/$today";
             if (!is_dir($logdir)){mkdir("$logdir", 0700);};
 
-            $instance = new JMeter($scenario, true, $optime);
+            $instance = new JMeter($scenario, true);
             $opt = $instance->run($today, $optime, $logdir);
 
             $result_url = "http://" . $_SERVER[ "SERVER_ADDR" ] .  "/" . $today . "/" . $optime;

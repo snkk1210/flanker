@@ -50,5 +50,19 @@
         </div>
         <div class="spinner" id="spinner"></div>
         <script src="js/loading.js"></script>
+
+        <div>
+            <table border='1'>
+            <?php
+                $remote_hosts = JMeter::getRemoteHost();
+
+                foreach ($remote_hosts as $key => $remote_host) {
+                    echo "<tr><td>" . $key + 1 . "</td><td>" . $remote_host . "</td></tr>";
+                }
+
+            ?>
+            </table>
+        </div>
+
     </body>
 </html>

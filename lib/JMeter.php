@@ -62,6 +62,20 @@ class JMeter
         return 0;
     }
 
+    /**
+     * 
+     */
+    public static function getRemoteHost()
+    {
+        $properties_file = "../../../../../usr/local/jmeter/bin/jmeter.properties";
+        $cmd = "grep ^remote_hosts= $properties_file";
+        exec($cmd, $opt);
+        $remote_hosts_csv = str_replace('remote_hosts=', '', $opt);
+        $remote_hosts = explode(",", $remote_hosts_csv[0]);
+
+        return $remote_hosts;
+    }
+
 }
 
 ?>

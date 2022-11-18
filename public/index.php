@@ -44,7 +44,7 @@
                         }
                         ?>
                     </select>
-                    <input type="submit" value="run" onclick="loading()" />
+                    <input type="submit" value="run" onclick="loading()" id="run" />
                 </td>
             </form>
         </div>

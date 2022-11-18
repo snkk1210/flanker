@@ -29,7 +29,8 @@ class JMeter
     /**
      * NOTE: upload 配下のシナリオを取得
      */
-    public static function getScenarioFileList(){
+    public static function getScenarioFileList()
+    {
         $list = array();
         $curdir = getcwd();
         $uploaddir = $curdir . "/../upload";
@@ -43,6 +44,22 @@ class JMeter
             closedir($dhandle);
         }
         return $list;
+    }
+
+    /**
+     * NOTE: 画面のリロードを禁止する
+     */
+    public static function prohibitReload()
+    {
+        session_start();
+        if(isset($_SESSION['loadflag'])){
+            header('Location: /');
+            session_unset();
+            exit;
+          }else{
+            $_SESSION['loadflag'] = "true";
+          }
+        return 0;
     }
 
 }

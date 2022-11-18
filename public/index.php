@@ -56,7 +56,8 @@
         <script src="js/loading.js"></script>
         <script src="js/common.js"></script>
 
-        <div>
+        <div class="workerlist">
+            <strong>Worker Lists</strong>
             <a href="/edit.php">Edit</a>
             <table border='1'>
             <?php

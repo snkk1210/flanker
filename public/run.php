@@ -33,7 +33,7 @@
         }
         ?>
         <textarea class="results" readonly><?php print_r($opt) ?></textarea>
-        <input type="button" value="Show Results" id="showResults">
+        <input type="button" value="Show Results" id="showResults" class="showhtml">
 
         <script>
             let showResults = document.getElementById('showResults');

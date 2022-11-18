@@ -15,7 +15,6 @@
         require('../lib/JMeter.php');
 
         JMeter::prohibitReload();
-
         if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['scenario'])) {
             $scenario = "../upload/" . $_GET['scenario'];
 

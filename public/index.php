@@ -13,6 +13,9 @@
 
         <?php
         require('../lib/JMeter.php');
+
+        session_start();
+        $_SESSION['loadflag'] = "false";
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if (is_uploaded_file($_FILES['scenariofile']['tmp_name']) && pathinfo($_FILES['scenariofile']['name'], PATHINFO_EXTENSION) == "jmx") {
                 $uploaddir = '../upload/';

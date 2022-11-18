@@ -52,9 +52,9 @@ class JMeter
     public static function prohibitReload()
     {
         session_start();
-        if(isset($_SESSION['loadflag'])){
+        if($_SESSION['loadflag'] == "true"){
             header('Location: /');
-            session_unset();
+            session_destroy();
             exit;
           }else{
             $_SESSION['loadflag'] = "true";

@@ -4,6 +4,8 @@ button, select, textarea {
 }
 
 .results {
+    background-color: #000000;
+    color: #ffffff;
     display: inline-block;
     vertical-align: top;
     height: 100%;

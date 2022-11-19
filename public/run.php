@@ -27,12 +27,16 @@
             if (!is_dir($logdir)){mkdir("$logdir", 0700);};
 
             $instance = new JMeter($scenario, true);
-            $opt = $instance->run($today, $optime, $logdir);
+            $opts = $instance->run($today, $optime, $logdir);
 
             $result_url = "http://" . $request_host .  "/" . $today . "/" . $optime;
         }
         ?>
-        <textarea class="results" readonly><?php print_r($opt) ?></textarea>
+        <textarea class="results" readonly><?php
+                foreach ( $opts as $opt ) {
+                    echo $opt . "\n";
+                }
+            ?></textarea>
         <input type="button" value="Show Results" id="showResults" class="showhtml">
 
         <script>

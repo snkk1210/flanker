@@ -23,6 +23,7 @@
         ?>
 
         <div>
+            Add the value of your running JMeter server's IP address. Multiple such servers can be added, comma-delimited.
             <form enctype="multipart/form-data" action="" method="POST">
                 <?php
                 $remote_hosts_csv = JMeter::getRemoteHostRaw();

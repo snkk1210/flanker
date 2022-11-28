@@ -109,6 +109,16 @@ class JMeter
         return $result_code;
     }
 
+
+    /**
+     * 
+     */
+    public function getScenarioObject()
+    { 
+        $s_object = simplexml_load_file("$this->scenario");
+        return $s_object;
+    }
+
 }
 
 ?>

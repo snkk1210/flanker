@@ -11,6 +11,7 @@ WEB ベースで JMeter を操作できるアプリケーションです。
 ・HTML ファイル生成、および別タブでの表示機能  
 ・リモート Worker ノードの種類 / 数量の確認  
 ・リモート Worker ノードの追加 / 削除 ( 実設定ファイルとの同期連携 )  
+・シナリオファイル ( Thread group ) の調整
 
 ## Installation
 
@@ -25,4 +26,8 @@ https://github.com/snkk1210/jmeter-MS
 ブラウザから http://\< server ip \>:8888 に接続してください。 
 
 
-![flanker_demo](https://user-images.githubusercontent.com/46625712/202855590-e274b251-8fca-4679-9839-ccc810e1e645.gif)
+![flanker01](https://user-images.githubusercontent.com/46625712/204560941-d8ac7458-43a4-4a9b-82aa-9e4f7b4c5a6b.gif)
+
+## Version
+
+release/0.0.2

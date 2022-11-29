@@ -9,6 +9,7 @@
     <body>
         <div>
             <h1 class="title"><a href="/" rel="home">Flanker</a></h1>
+            <h4 class="title">Scenario Adjuster ( Preview )</h4>
         </div>
 
         <?php

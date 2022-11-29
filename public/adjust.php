@@ -33,7 +33,17 @@
                     echo "<strong>" . $thread_group->attributes()->testname . "</strong>";
                     echo "<table border='1'>";
                     echo "<tr><td>Name</td><td>" . $thread_group->attributes()->testname . "</td></tr>";
-                    echo "<tr><td>Enable</td><td>" . $thread_group->attributes()->enabled . "</td></tr>";
+
+                    echo "<tr><td>Enable</td><td>";
+                    if ($thread_group->attributes()->enabled == "true") {
+                        echo "<input type='radio' name='enable' value='true' checked> true";
+                        echo "<input type='radio' name='enable' value='false'> false";
+                    } else {
+                        echo "<input type='radio' name='enable' value='true'> true";
+                        echo "<input type='radio' name='enable' value='false' checked> false";
+                    }
+                    echo "</td></tr>";
+
                     echo "<tr><td>Action to be taken after a Sampler error</td><td>" . $thread_group->stringProp[0] . "</td></tr>";
                     echo "<tr><td>Number of Threads (users)</td><td>" . '<input type="text" name="number_of_threads" value=' . $thread_group->stringProp[1] . '>' . "</td></tr>";
                     echo "<tr><td>Ramp-up period (seconds)</td><td>" . '<input type="text" name="rampup_period" value=' . $thread_group->stringProp[2] . '>' . "</td></tr>";
@@ -62,7 +72,7 @@
             $scenario = "../upload/" . $_POST['scenario'];
 
             $instance = new JMeter($scenario, true);
-            $opt = $instance->setScenarioObject($_POST['key'], $_POST['number_of_threads'], $_POST['rampup_period'], $_POST['duration'], $_POST['startup_delay']);
+            $opt = $instance->setScenarioObject($_POST['key'], $_POST['enable'], $_POST['number_of_threads'], $_POST['rampup_period'], $_POST['duration'], $_POST['startup_delay']);
 
             if ($opt) {
                 header('Location: /adjust.php?scenario=' . $_POST['scenario']);

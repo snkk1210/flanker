@@ -47,7 +47,7 @@
                 echo "<tr><td>Loop Count</td><td>";
                 if (isset($thread_group->elementProp->intProp)) {
                     echo "Infinite";
-                    echo "<input type='hidden' name='loop_count' value=''>";
+                    echo "<input type='hidden' name='loop_count' value='infinite_flag'>";
                 } else {
                     echo '<input type="text" name="loop_count" value=' . $thread_group->elementProp->stringProp . '>';
                 }
@@ -63,6 +63,8 @@
                 }
                 echo "</td></tr>";
     
+                /** 
+                 * # NOTE: because the JMX formatting is broken.
                 echo "<tr><td>Delay Thread creation until needed</td><td>";
                 if ($thread_group->boolProp[2] == "true") {
                     echo "<input type='radio' name='until_needed' value='true' checked> true";
@@ -72,8 +74,9 @@
                     echo "<input type='radio' name='until_needed' value='false' checked> false";
                 }
                 echo "</td></tr>";
+                */
     
-                echo "<tr><td>Delay Thread creation until needed</td><td>";
+                echo "<tr><td>Specify Thread lifetime</td><td>";
                 if ($thread_group->boolProp[0] == "true") {
                     echo "<input type='radio' name='thread_lifetime' value='true' checked> true";
                     echo "<input type='radio' name='thread_lifetime' value='false'> false";
@@ -102,7 +105,7 @@
             $scenario = "../upload/" . $_POST['scenario'];
 
             $instance = new JMeter($scenario, true);
-            $opt = $instance->setScenarioObject($_POST['key'], $_POST['enable'], $_POST['number_of_threads'], $_POST['rampup_period'], $_POST['loop_count'], $_POST['each_iteration'], $_POST['until_needed'], $_POST['thread_lifetime'], $_POST['duration'], $_POST['startup_delay']);
+            $opt = $instance->setScenarioObject($_POST['key'], $_POST['enable'], $_POST['number_of_threads'], $_POST['rampup_period'], $_POST['loop_count'], $_POST['each_iteration'], $_POST['thread_lifetime'], $_POST['duration'], $_POST['startup_delay']);
 
             if ($opt) {
                 header('Location: /adjust.php?scenario=' . $_POST['scenario']);

@@ -17,7 +17,7 @@ class JMeter
     }
 
     /**
-     *
+     * NOTE: JMeter 実行
      */
     public function run(string $today, string $optime, string $logdir)
     { 
@@ -71,7 +71,7 @@ class JMeter
     }
 
     /**
-     * 
+     * NOTE: 紐づいている Worker を配列で返す
      */
     public static function getRemoteHost()
     {
@@ -85,7 +85,7 @@ class JMeter
     }
 
     /**
-     * 
+     * NOTE: 紐づいている Worker の設定行をそのまま返す
      */
     public static function getRemoteHostRaw()
     {
@@ -98,7 +98,7 @@ class JMeter
     }
 
     /**
-     * 
+     * NOTE: Worker の設定行を置換
      */
     public static function setRemoteHostRaw(string $remote_hosts_csv)
     {
@@ -111,7 +111,7 @@ class JMeter
 
 
     /**
-     * 
+     * NOTE: シナリオファイルをオブジェクトとして返す
      */
     public function getScenarioObject()
     { 
@@ -120,7 +120,7 @@ class JMeter
     }
 
     /**
-     * 
+     * # NOTE: シナリオファイルを更新
      */
     public function setScenarioObject(int $key, string $enable, string $number_of_threads, string $rampup_period, string $loop_count, string $each_iteration, string $thread_lifetime, string $duration, string $startup_delay)
     { 

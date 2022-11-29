@@ -122,13 +122,14 @@ class JMeter
     /**
      * 
      */
-    public function setScenarioObject(int $key, string $enable, string $number_of_threads, string $rampup_period, string $each_iteration, string $until_needed, string $thread_lifetime, string $duration, string $startup_delay)
+    public function setScenarioObject(int $key, string $enable, string $number_of_threads, string $rampup_period, string $loop_count, string $each_iteration, string $until_needed, string $thread_lifetime, string $duration, string $startup_delay)
     { 
         $s_object = simplexml_load_file("$this->scenario");
 
         $s_object[0]->hashTree->hashTree->ThreadGroup[$key]->attributes()->enabled = "$enable";
         $s_object[0]->hashTree->hashTree->ThreadGroup[$key]->stringProp[1] = "$number_of_threads";
         $s_object[0]->hashTree->hashTree->ThreadGroup[$key]->stringProp[2] = "$rampup_period";
+        $s_object[0]->hashTree->hashTree->ThreadGroup[$key]->elementProp->stringProp = "$loop_count";
         $s_object[0]->hashTree->hashTree->ThreadGroup[$key]->boolProp[1] = "$each_iteration";
         $s_object[0]->hashTree->hashTree->ThreadGroup[$key]->boolProp[2] = "$until_needed";
         $s_object[0]->hashTree->hashTree->ThreadGroup[$key]->boolProp[0] = "$thread_lifetime";

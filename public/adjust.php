@@ -42,8 +42,8 @@
                 echo "</td></tr>";
     
                 echo "<tr><td>Action to be taken after a Sampler error</td><td>" . $thread_group->stringProp[0] . "</td></tr>";
-                echo "<tr><td>Number of Threads (users)</td><td>" . '<input type="text" name="number_of_threads" value=' . $thread_group->stringProp[1] . '>' . "</td></tr>";
-                echo "<tr><td>Ramp-up period (seconds)</td><td>" . '<input type="text" name="rampup_period" value=' . $thread_group->stringProp[2] . '>' . "</td></tr>";
+                echo "<tr><td>Number of Threads (users)</td><td>" . "<input type='text' name='number_of_threads' value=" . $thread_group->stringProp[1] . ">" . "</td></tr>";
+                echo "<tr><td>Ramp-up period (seconds)</td><td>" . "<input type='text' name='rampup_period' value=" . $thread_group->stringProp[2] . ">" . "</td></tr>";
     
                 echo "<tr><td>Loop Count</td><td>";
                 if (isset($thread_group->elementProp->intProp)) {
@@ -87,8 +87,8 @@
                 }
                 echo "</td></tr>";
     
-                echo "<tr><td>Duration (seconds)</td><td>" . '<input type="text" name="duration" value=' . $thread_group->stringProp[3] . '>' . "</td></tr>";
-                echo "<tr><td>Startup delay (seconds)</td><td>" . '<input type="text" name="startup_delay" value=' . $thread_group->stringProp[4] . '>' . "</td></tr>";
+                echo "<tr><td>Duration (seconds)</td><td>" . "<input type='text' name='duration' value=" . $thread_group->stringProp[3] . ">" . "</td></tr>";
+                echo "<tr><td>Startup delay (seconds)</td><td>" . "<input type='text' name='startup_delay' value=" . $thread_group->stringProp[4] . ">" . "</td></tr>";
                 echo "</table>";
                 echo "<input type='hidden' name='scenario' value=" . $_GET['scenario'] . ">";
                 echo "<input type='hidden' name='key' value=" . $i . ">";

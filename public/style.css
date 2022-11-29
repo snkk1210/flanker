@@ -131,8 +131,3 @@ button, select, textarea {
     color: #000066;
     background: #ffffff;
   }
-
-  .box select{
-    border: 100px solid;
-    font-size: 3000px;
-  }

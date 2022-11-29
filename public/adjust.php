@@ -49,9 +49,37 @@
                     echo "<tr><td>Ramp-up period (seconds)</td><td>" . '<input type="text" name="rampup_period" value=' . $thread_group->stringProp[2] . '>' . "</td></tr>";
                     echo "<tr><td>Loop Count</td><td>" . $thread_group->elementProp->intProp . "</td></tr>";
                     echo "<tr><td>Loop Count</td><td>" . $thread_group->elementProp->stringProp . "</td></tr>";
-                    echo "<tr><td>Same user on each iteration</td><td>" . $thread_group->boolProp[1] . "</td></tr>";
-                    echo "<tr><td>Delay Thread creation until needed</td><td>" . $thread_group->boolProp[2] . "</td></tr>";
-                    echo "<tr><td>Specify Thread lifetime</td><td>" . $thread_group->boolProp[0] . "</td></tr>";
+
+                    echo "<tr><td>Same user on each iteration</td><td>";
+                    if ($thread_group->boolProp[1] == "true") {
+                        echo "<input type='radio' name='each_iteration' value='true' checked> true";
+                        echo "<input type='radio' name='each_iteration' value='false'> false";
+                    } else {
+                        echo "<input type='radio' name='each_iteration' value='true'> true";
+                        echo "<input type='radio' name='each_iteration' value='false' checked> false";
+                    }
+                    echo "</td></tr>";
+
+                    echo "<tr><td>Delay Thread creation until needed</td><td>";
+                    if ($thread_group->boolProp[2] == "true") {
+                        echo "<input type='radio' name='until_needed' value='true' checked> true";
+                        echo "<input type='radio' name='until_needed' value='false'> false";
+                    } else {
+                        echo "<input type='radio' name='until_needed' value='true'> true";
+                        echo "<input type='radio' name='until_needed' value='false' checked> false";
+                    }
+                    echo "</td></tr>";
+
+                    echo "<tr><td>Delay Thread creation until needed</td><td>";
+                    if ($thread_group->boolProp[0] == "true") {
+                        echo "<input type='radio' name='thread_lifetime' value='true' checked> true";
+                        echo "<input type='radio' name='thread_lifetime' value='false'> false";
+                    } else {
+                        echo "<input type='radio' name='thread_lifetime' value='true'> true";
+                        echo "<input type='radio' name='thread_lifetime' value='false' checked> false";
+                    }
+                    echo "</td></tr>";
+
                     echo "<tr><td>Duration (seconds)</td><td>" . '<input type="text" name="duration" value=' . $thread_group->stringProp[3] . '>' . "</td></tr>";
                     echo "<tr><td>Startup delay (seconds)</td><td>" . '<input type="text" name="startup_delay" value=' . $thread_group->stringProp[4] . '>' . "</td></tr>";
                     echo "</table>";
@@ -72,7 +100,7 @@
             $scenario = "../upload/" . $_POST['scenario'];
 
             $instance = new JMeter($scenario, true);
-            $opt = $instance->setScenarioObject($_POST['key'], $_POST['enable'], $_POST['number_of_threads'], $_POST['rampup_period'], $_POST['duration'], $_POST['startup_delay']);
+            $opt = $instance->setScenarioObject($_POST['key'], $_POST['enable'], $_POST['number_of_threads'], $_POST['rampup_period'], $_POST['each_iteration'], $_POST['until_needed'], $_POST['thread_lifetime'], $_POST['duration'], $_POST['startup_delay']);
 
             if ($opt) {
                 header('Location: /adjust.php?scenario=' . $_POST['scenario']);

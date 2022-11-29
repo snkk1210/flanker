@@ -14,7 +14,6 @@
         <?php
         require('../lib/JMeter.php');
 
-        JMeter::prohibitReload();
         if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['scenario'])) {
             $scenario = "../upload/" . $_GET['scenario'];
 
@@ -26,10 +25,11 @@
         ?>
 
         <div class="scenariolist">
-            <form action="" method="post" name="">
             <?php
 
+                $i = 0;
                 foreach ($thread_groups as $key => $thread_group) {
+                    echo '<form action="" method="post" name="">';
                     echo "<strong>" . $thread_group->attributes()->testname . "</strong>";
                     echo "<table border='1'>";
                     echo "<tr><td>Name</td><td>" . $thread_group->attributes()->testname . "</td></tr>";
@@ -45,13 +45,31 @@
                     echo "<tr><td>Duration (seconds)</td><td>" . $thread_group->stringProp[3] . "</td></tr>";
                     echo "<tr><td>Startup delay (seconds)</td><td>" . $thread_group->stringProp[4] . "</td></tr>";
                     echo "</table>";
+                    echo '<input type="hidden" name="scenario" value=' . $_GET['scenario'] . '>';
+                    echo '<input type="hidden" name="key" value=' . $i . '>';
                     echo "<input type='submit' value='update' id='adjust' class='button' />";
                     echo "<br>";
                     echo "<br>";
+                    echo '</form>';
+                    $i++;
                 }
 
             ?>
-            </form>
         </div>
+
+        <?php
+        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['scenario'])) {
+            $scenario = "../upload/" . $_POST['scenario'];
+
+            $instance = new JMeter($scenario, true);
+            $opt = $instance->setScenarioObject($_POST['key'], $_POST['number_of_threads'], $_POST['rampup_period']);
+
+            if ($opt) {
+                header('Location: /adjust.php?scenario=' . $_POST['scenario']);
+            }
+            
+
+        }
+        ?>
     </body>
 </html>

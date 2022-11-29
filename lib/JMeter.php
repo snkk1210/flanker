@@ -119,6 +119,23 @@ class JMeter
         return $s_object;
     }
 
+    /**
+     * 
+     */
+    public function setScenarioObject(int $key, string $number_of_threads, string $rampup_period)
+    { 
+        $s_object = simplexml_load_file("$this->scenario");
+
+        $s_object[0]->hashTree->hashTree->ThreadGroup[$key]->stringProp[1] = "$number_of_threads";
+        $s_object[0]->hashTree->hashTree->ThreadGroup[$key]->stringProp[2] = "$rampup_period";
+
+        $opt = $s_object->asXML("$this->scenario");
+
+        if(!$opt){ error_log("Scenario update has failed "); }
+
+        return $opt;
+    }
+
 }
 
 ?>

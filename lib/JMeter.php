@@ -122,12 +122,14 @@ class JMeter
     /**
      * 
      */
-    public function setScenarioObject(int $key, string $number_of_threads, string $rampup_period)
+    public function setScenarioObject(int $key, string $number_of_threads, string $rampup_period, string $duration, string $startup_delay)
     { 
         $s_object = simplexml_load_file("$this->scenario");
 
         $s_object[0]->hashTree->hashTree->ThreadGroup[$key]->stringProp[1] = "$number_of_threads";
         $s_object[0]->hashTree->hashTree->ThreadGroup[$key]->stringProp[2] = "$rampup_period";
+        $s_object[0]->hashTree->hashTree->ThreadGroup[$key]->stringProp[3] = "$duration";
+        $s_object[0]->hashTree->hashTree->ThreadGroup[$key]->stringProp[4] = "$startup_delay";
 
         $opt = $s_object->asXML("$this->scenario");
 

@@ -31,7 +31,7 @@ class JMeter
         if(!unlink($this->scenario)){
             error_log("Scenario delete has failed ");
         }
-        return $opt;
+        return 0;
     }
 
     /**

@@ -19,7 +19,7 @@
             $scenario = "../upload/" . $_GET['scenario'];
 
             $instance = new JMeter($scenario, true);
-            $opt = $instance->delete();
+            $instance->delete();
             header('Location: /');
 
         }

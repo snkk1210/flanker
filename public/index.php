@@ -53,6 +53,9 @@
                 </td>
             </form>
         </div>
+
+        <textarea class="results" id="jmopt" rows="30" readonly></textarea>
+
         <div class="spinner" id="spinner"></div>
         <script src="js/loading.js"></script>
         <script src="js/common.js"></script>

@@ -32,7 +32,7 @@
             $result_url = "http://" . $request_host .  "/" . $today . "/" . $optime;
         }
         ?>
-        <textarea class="results" readonly><?php
+        <textarea class="results" rows="50" readonly><?php
                 foreach ( $opts as $opt ) {
                     echo $opt . "\n";
                 }

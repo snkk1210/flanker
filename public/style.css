@@ -10,7 +10,7 @@ button, select, textarea {
     vertical-align: top;
     height: 100%;
     width: 100%;
-    max-height: 170px;
+    max-height: 500px;
     padding: 8px;
     box-sizing: border-box;
     border-radius: 5px;
@@ -26,9 +26,9 @@ button, select, textarea {
 }
 
 .spinner {
-    width: 532px;
-    height: 532px;
-    margin: 110px auto;
+    width: 20px;
+    height: 20px;
+    margin: 20px auto;
     border: 4px #ddd solid;
     border-top: 4px #2e93e6 solid;
     border-radius: 50%;

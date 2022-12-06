@@ -1,13 +1,15 @@
 document.getElementById("spinner").style.display ="none";
-const url = "api.php";
+const url = "./api/log.php";
 
 function callApi(url) {
   fetch(url)
     .then(function (response) {
       return response.json();
     })
-    .then(function (json_data) {
-      console.log(json_data);
+    .then(function (jsonData) {
+      console.log(jsonData);
+      let text = document.getElementById('jmopt').innerHTML;
+      document.getElementById('jmopt').innerHTML = `${JSON.stringify(jsonData.output).split('"').join('')}`;
     });
 }
 
@@ -16,5 +18,5 @@ function loading(e) {
     const run = document.getElementById("run");
     spinner.style.display ="block";
     run.style.display ="none";
-    //setInterval("callApi(url)", 1000);
+    setInterval("callApi(url)", 100);
  };

@@ -7,6 +7,7 @@ WEB ベースで JMeter を操作できるアプリケーションです。
 
 ・シナリオ ( .jmx ) のアップ機能  
 ・シナリオを選択しての JMeter 実行  
+・JMeter 実行進捗の確認 ( 非同期 )  
 ・実行結果確認  
 ・HTML ファイル生成、および別タブでの表示機能  
 ・リモート Worker ノードの種類 / 数量の確認  
@@ -26,8 +27,8 @@ https://github.com/snkk1210/jmeter-MS
 ブラウザから http://\< server ip \>:8888 に接続してください。 
 
 
-![flanker01](https://user-images.githubusercontent.com/46625712/204560941-d8ac7458-43a4-4a9b-82aa-9e4f7b4c5a6b.gif)
+![flanker_o_01](https://user-images.githubusercontent.com/46625712/205951781-eef218f3-1c6e-413c-ae86-4707cf235d36.gif)
 
 ## Version
 
-release/0.0.2
+release/0.0.3

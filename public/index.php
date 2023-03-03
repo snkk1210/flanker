@@ -10,7 +10,6 @@
         <div>
             <h1 class="title"><a href="/" rel="home">Flanker</a></h1>
         </div>
-
         <?php
         require('../lib/JMeter.php');
 
@@ -28,14 +27,12 @@
             }
         }
         ?>
-
         <div>
             <form enctype="multipart/form-data" action="" method="POST">
                 <input name="scenariofile" type="file" accept=".jmx" />
                 <input type="submit" value="upload" />
             </form>
         </div>
-
         <div>
             <form method="GET">
                 <td>
@@ -53,13 +50,10 @@
                 </td>
             </form>
         </div>
-
         <textarea class="results" id="jmopt" rows="30" readonly></textarea>
-
         <div class="spinner" id="spinner"></div>
         <script src="js/loading.js"></script>
         <script src="js/common.js"></script>
-
         <div class="workerlist">
             <strong>Worker Lists</strong>
             <a href="/edit.php">Edit</a>
@@ -73,6 +67,5 @@
             ?>
             </table>
         </div>
-
     </body>
 </html>

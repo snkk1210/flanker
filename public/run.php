@@ -10,7 +10,6 @@
         <div>
             <h1 class="title"><a href="/" rel="home">Flanker</a></h1>
         </div>
-
         <?php
         require('../lib/JMeter.php');
 
@@ -38,7 +37,6 @@
                 }
             ?></textarea>
         <input type="button" value="Show Results" id="showResults" class="showhtml">
-
         <script>
             let showResults = document.getElementById('showResults');
             showResults.addEventListener('click', () => {

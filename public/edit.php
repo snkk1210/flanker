@@ -10,7 +10,6 @@
         <div>
             <h1 class="title"><a href="/" rel="home">Flanker</a></h1>
         </div>
-
         <?php
         require('../lib/JMeter.php');
         if ($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST["remote_hosts"])) {
@@ -20,7 +19,6 @@
             header('Location: /');
         }
         ?>
-
         <div>
             Add the value of your running JMeter server's IP address. Multiple such servers can be added, comma-delimited.
             <form enctype="multipart/form-data" action="" method="POST">
@@ -31,6 +29,5 @@
                 <input type="submit" value="update" class="remoteupdate"/>
             </form>
         </div>
-
     </body>
 </html>

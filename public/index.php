@@ -70,7 +70,6 @@
                 foreach ($remote_hosts as $key => $remote_host) {
                     echo "<tr><td>" . $key + 1 . "</td><td>" . $remote_host . "</td></tr>";
                 }
-
             ?>
             </table>
         </div>

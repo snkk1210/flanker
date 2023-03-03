@@ -19,7 +19,6 @@
             }
             header('Location: /');
         }
-        
         ?>
 
         <div>

@@ -29,6 +29,7 @@
             $opts = $instance->run($today, $optime, $logdir);
 
             $result_url = "http://" . $request_host .  "/" . $today . "/" . $optime;
+            $dl_url = "http://" . $request_host . ":8888/api/zipdler.php?result=" . $today . "/" . $optime;
         }
         ?>
         <textarea class="results" rows="50" readonly><?php
@@ -37,10 +38,16 @@
                 }
             ?></textarea>
         <input type="button" value="Show Results" id="showResults" class="showhtml">
+        <input type="button" value="DL Results" id="dlResults" class="showhtml">
         <script>
             let showResults = document.getElementById('showResults');
             showResults.addEventListener('click', () => {
                 open('<?php echo $result_url; ?>');
+            });
+
+            let dlResults = document.getElementById('dlResults');
+            dlResults.addEventListener('click', () => {
+                open('<?php echo $dl_url; ?>');
             });
         </script>
         <script src="js/results.js"></script>

@@ -31,4 +31,4 @@ https://github.com/snkk1210/jmeter-MS
 
 ## Version
 
-release/0.0.3
+release/0.0.4

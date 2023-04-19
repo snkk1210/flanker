@@ -35,6 +35,18 @@ class JMeter
     }
 
     /**
+     * NOTE: JMeter 停止
+     */
+    public static function stopJMeter()
+    {
+        $cmd = "/usr/local/jmeter/bin/stoptest.sh";
+        exec($cmd, $opt, $result_code);
+        $result = $result_code == 0 ? 'success' : 'failed';
+        $res = ['status' => $result];
+        return json_encode($res);
+    }
+
+    /**
      * NOTE: upload 配下のシナリオを取得
      */
     public static function getScenarioFileList()

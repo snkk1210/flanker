@@ -49,9 +49,9 @@
                     <input type="submit" value="adjust" id="adjust" formaction="adjust.php" class="button" />
                 </td>
             </form>
-            <button onclick="sendReq2JMstop()" id="stop" class="button stop-btn" >stop</button>
         </div>
         <textarea class="results" id="jmopt" rows="30" readonly></textarea>
+        <button onclick="sendReq2JMstop()" id="stop" class="button stop-btn" >stop</button>
         <div class="spinner" id="spinner"></div>
         <script src="js/loading.js"></script>
         <script src="js/common.js"></script>

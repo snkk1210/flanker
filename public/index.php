@@ -47,6 +47,7 @@
                     <input type="submit" value="start" onclick="loading()" id="run" formaction="run.php" class="button" />
                     <input type="submit" value="delete" onclick="deleteAlert(event);return false;" id="delete" formaction="delete.php" class="button" />
                     <input type="submit" value="adjust" id="adjust" formaction="adjust.php" class="button" />
+                    <button onclick="sendReq2JMstop()" class="button" >stop</button>
                 </td>
             </form>
         </div>
@@ -54,6 +55,7 @@
         <div class="spinner" id="spinner"></div>
         <script src="js/loading.js"></script>
         <script src="js/common.js"></script>
+        <script src="js/jmstop.js"></script>
         <div class="workerlist">
             <strong>Worker Lists</strong>
             <a href="/edit.php">Edit</a>

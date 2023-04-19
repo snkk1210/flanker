@@ -1,4 +1,5 @@
 document.getElementById("spinner").style.display ="none";
+document.getElementById("stop").style.display ="none";
 const url = "./api/log.php";
 
 function callApi(url) {
@@ -15,8 +16,14 @@ function callApi(url) {
 
 function loading(e) {
 	const spinner = document.getElementById("spinner");
-    const run = document.getElementById("run");
-    spinner.style.display ="block";
-    run.style.display ="none";
-    setInterval("callApi(url)", 100);
+  const stop = document.getElementById("stop");
+  const run = document.getElementById("run");
+  const del = document.getElementById("delete");
+  const adjust = document.getElementById("adjust");
+  spinner.style.display ="block";
+  stop.style.display ="block";
+  run.style.display ="none";
+  del.style.display ="none";
+  adjust.style.display ="none";
+  setInterval("callApi(url)", 100);
  };

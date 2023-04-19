@@ -131,3 +131,10 @@ button, select, textarea {
     color: #000066;
     background: #ffffff;
   }
+
+  .stop-btn {
+    position: relative;
+    top: -39px;
+    left: 385px;
+    
+  }

@@ -47,9 +47,9 @@
                     <input type="submit" value="start" onclick="loading()" id="run" formaction="run.php" class="button" />
                     <input type="submit" value="delete" onclick="deleteAlert(event);return false;" id="delete" formaction="delete.php" class="button" />
                     <input type="submit" value="adjust" id="adjust" formaction="adjust.php" class="button" />
-                    <button onclick="sendReq2JMstop()" class="button" >stop</button>
                 </td>
             </form>
+            <button onclick="sendReq2JMstop()" id="stop" class="button stop-btn" >stop</button>
         </div>
         <textarea class="results" id="jmopt" rows="30" readonly></textarea>
         <div class="spinner" id="spinner"></div>

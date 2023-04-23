@@ -1,10 +1,12 @@
-window.onload = function() {
+window.addEventListener('load', function() {
     var currentUrl = window.location.href;
     var referrer = document.referrer;
-    if (referrer && (referrer === currentUrl || referrer + '#' === currentUrl) && (performance.navigation.type === 2 || performance.navigation.type === 0)) {
-        showMessage();
+    var performanceNavigation = performance.getEntriesByType('navigation')[0];
+  
+    if (referrer && (referrer === currentUrl || referrer + '#' === currentUrl) && (performanceNavigation.type === 'back_forward' || performanceNavigation.type === 'navigate')) {
+      showMessage();
     }
-};
+});
 
 function showMessage() {
     document.getElementById("message").style.display = "block";

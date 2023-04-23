@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Flanker</title>
         <link rel="stylesheet" href="style.css?<?php echo date('YmdHis'); ?>" type="text/css">
+        <link rel="stylesheet" href="css/adjust.css?<?php echo date('YmdHis'); ?>" type="text/css">
     </head>
     <body>
         <div>
@@ -109,10 +110,11 @@
             $opt = $instance->setScenarioObject($_POST['key'], $_POST['enable'], $_POST['number_of_threads'], $_POST['rampup_period'], $_POST['loop_count'], $_POST['each_iteration'], $_POST['thread_lifetime'], $_POST['duration'], $_POST['startup_delay']);
 
             if ($opt) {
-                header('Location: /adjust.php?scenario=' . $_POST['scenario']);
+                header('Location: /adjust.php?scenario=' . urlencode($_POST['scenario']));
             }
         }
         ?>
-
+        <script src="js/adjust.js"></script>
+        <div id="message">Value updated.</div>
     </body>
 </html>

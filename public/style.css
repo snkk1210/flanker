@@ -62,6 +62,10 @@ button, select, textarea {
     background: #ffffff;
   }
 
+  .delete-btn {
+    background: #c0c0c0;
+  }
+
   .showhtml {
     margin: 1em 0px;
     display: inline-block;

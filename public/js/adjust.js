@@ -12,5 +12,5 @@ function showMessage() {
     document.getElementById("message").style.display = "block";
     setTimeout(function() {
         document.getElementById("message").style.display = "none";
-    }, 1000);
+    }, 700);
 }

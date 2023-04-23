@@ -27,13 +27,14 @@ https://github.com/snkk1210/jmeter-MS
 ブラウザから http://\< server ip \>:8888 に接続してください。 
 
 
-![flanker_o_01](https://user-images.githubusercontent.com/46625712/205951781-eef218f3-1c6e-413c-ae86-4707cf235d36.gif)
+![flanker3_gif](https://user-images.githubusercontent.com/46625712/233827911-af7ab831-1620-4fdb-8552-66f7c98c6402.gif)
 
 ## Version
 
 release/0.0.6
 
 ・実行結果を ZIP でダウンロードする機能を追加しました。  
-・JMeter の停止機能を追加しました。
+・JMeter の停止機能を追加しました。  
+・シナリオファイル ( Thread group ) の調整時メッセージ表示機能を追加しました。
 
-![stop](https://user-images.githubusercontent.com/46625712/233142609-eb60e91a-2f25-4100-b218-3e6d1a86e32d.gif)
+![flanker3_stop_gif](https://user-images.githubusercontent.com/46625712/233827958-44898192-44c7-4ca3-a35e-4d2434c1e16f.gif)

@@ -114,7 +114,7 @@
             }
         }
         ?>
-        <script src="js/adjust.js"></script>
         <div id="message">Value updated.</div>
+        <script src="js/adjust.js"></script>
     </body>
 </html>

@@ -64,6 +64,7 @@ button, select, textarea {
 
   .delete-btn {
     background: #c0c0c0;
+    color: #000000;
   }
 
   .showhtml {
@@ -140,5 +141,5 @@ button, select, textarea {
     position: relative;
     top: -539px;
     left: 385px;
-    background: #660000;
+    background: #ff8c00;
   }

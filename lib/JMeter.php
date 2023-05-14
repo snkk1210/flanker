@@ -63,6 +63,7 @@ class JMeter
             }
             closedir($dhandle);
         }
+        $list = array_reverse($list);
         return $list;
     }
 

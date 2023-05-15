@@ -20,6 +20,38 @@ class Common
         exec($cmd, $opt);
         return $opt;
     }
+
+    /**
+     * NOTE: Obtaining a directory listing
+     * @param string $dir
+     * @param int $depth
+     * @param int $max_depth
+     */
+    public static function getDirectories($dir, $depth = 0, $max_depth = 2)
+    {
+        $items = scandir($dir);
+
+        $directories = [];
+
+        foreach ($items as $item) {
+            if ($item === '.' || $item === '..') {
+                continue;
+            }
+
+            $path = $dir . '/' . $item;
+
+            if (is_dir($path)) {
+                $directories[] = $path;
+
+                if ($depth < $max_depth) {
+                    $sub_directories = getDirectories($path, $depth + 1, $max_depth);
+                    $directories = array_merge($directories, $sub_directories);
+                }
+            }
+        }
+
+        return $directories;
+    }
 }
 
 ?>

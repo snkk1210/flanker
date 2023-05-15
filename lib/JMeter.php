@@ -28,7 +28,7 @@ class JMeter
 
     public function delete()
     { 
-        if(!unlink($this->scenario)){
+        if (!unlink($this->scenario)) {
             error_log("Scenario delete has failed ");
         }
         return 0;
@@ -55,9 +55,9 @@ class JMeter
         $curdir = getcwd();
         $uploaddir = $curdir . "/../upload";
         $dhandle = opendir($uploaddir);
-        if ($dhandle){
-            while (false !== ($fname = readdir($dhandle))){
-                if ($fname != '.' && $fname != '..' && $fname != '.gitkeep' && $fname != '.gitignore'){
+        if ($dhandle) {
+            while (false !== ($fname = readdir($dhandle))) {
+                if ($fname != '.' && $fname != '..' && $fname != '.gitkeep' && $fname != '.gitignore') {
                     $list[] = $fname;
                 }
             }
@@ -73,7 +73,7 @@ class JMeter
     public static function prohibitReload()
     {
         session_start();
-        if($_SESSION['loadflag'] == "true"){
+        if ($_SESSION['loadflag'] == "true") {
             header('Location: /');
             session_destroy();
             exit;
@@ -158,7 +158,7 @@ class JMeter
 
         $opt = $s_object->asXML("$this->scenario");
 
-        if(!$opt){ error_log("Scenario update has failed "); }
+        if (!$opt) { error_log("Scenario update has failed "); }
 
         return $opt;
     }

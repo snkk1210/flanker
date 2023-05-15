@@ -11,7 +11,7 @@ class Common
     {
         // NOTE: check directory traversal
         $flag = preg_match('/(\.\.\/)/', $dir) ? 1 : 0;
-        if($flag) { 
+        if ($flag) { 
             error_log("Error: Directory Traversal measures");
             exit;
         }

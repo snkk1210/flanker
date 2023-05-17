@@ -17,7 +17,7 @@
             $directories = Common::getDirectories($root_directory);
 
             foreach ($directories as $directory) {
-                echo $directory . "<br>";
+                echo str_replace($root_directory, '', $directory) . "<br>";
             }
         ?>
     </body>

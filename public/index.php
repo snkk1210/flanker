@@ -10,6 +10,9 @@
         <div>
             <h1 class="title"><a href="/" rel="home">Flanker</a></h1>
         </div>
+        <div>
+            <h5 class="result-list"><a href="/result-list.php" rel="result-list">Results</a></h5>
+        </div>
         <?php
         require('../lib/JMeter.php');
 

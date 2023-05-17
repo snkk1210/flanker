@@ -24,9 +24,9 @@
                 $slash_count = substr_count($result_dir, '/');
 
                 if ($slash_count >= 2) {
-                    echo '<a href="' . $result_url . '" rel="result">' . $result_dir . '</a>' . "<br>";
+                    echo '<a href="' . $result_url . '" target="_blank" rel="noopener noreferrer">' . $result_dir . '</a>' . "<br>";
                 } else {
-                    echo '<strong><a href="' . $result_url . '" rel="result">' . str_replace('/', '# ', $result_dir) . '</a>' . "<br></strong>";
+                    echo '<strong><a href="' . $result_url . '" target="_blank" rel="noopener noreferrer">' . str_replace('/', '# ', $result_dir) . '</a>' . "<br></strong>";
                 }
             }
         ?>

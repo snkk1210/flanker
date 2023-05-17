@@ -27,7 +27,7 @@ class Common
      * @param int $depth
      * @param int $max_depth
      */
-    public static function getDirectories($dir, $depth = 0, $max_depth = 2)
+    public static function getDirectories($dir, $depth = 0, $max_depth = 1)
     {
         $items = scandir($dir);
 
@@ -44,7 +44,7 @@ class Common
                 $directories[] = $path;
 
                 if ($depth < $max_depth) {
-                    $sub_directories = getDirectories($path, $depth + 1, $max_depth);
+                    $sub_directories = Common::getDirectories($path, $depth + 1, $max_depth);
                     $directories = array_merge($directories, $sub_directories);
                 }
             }

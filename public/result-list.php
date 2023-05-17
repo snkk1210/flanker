@@ -20,7 +20,14 @@
             foreach ($directories as $directory) {
                 $result_dir = str_replace($root_directory, '', $directory);
                 $result_url = "http://" . $request_host . "/" . $result_dir;
-                echo '<a href="' . $result_url . '" rel="home">' . $result_dir . '</a>' . "<br>";
+
+                $slash_count = substr_count($result_dir, '/');
+
+                if ($slash_count >= 2) {
+                    echo '<a href="' . $result_url . '" rel="result">' . $result_dir . '</a>' . "<br>";
+                } else {
+                    echo '<strong><a href="' . $result_url . '" rel="result">' . str_replace('/', '# ', $result_dir) . '</a>' . "<br></strong>";
+                }
             }
         ?>
     </body>

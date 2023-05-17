@@ -37,6 +37,6 @@ release/0.0.7
 ・JMeter の停止機能を追加しました。  
 ・シナリオファイル ( Thread group ) の調整時メッセージ表示機能を追加しました。  
 ・試験結果一覧の画面を追加しました。  
-・シナリオファイルを新規から表示されるよう調整しました。  
+・シナリオファイルの表示順を調整しました。  
 
 ![flanker3_stop_gif](https://user-images.githubusercontent.com/46625712/233827958-44898192-44c7-4ca3-a35e-4d2434c1e16f.gif)

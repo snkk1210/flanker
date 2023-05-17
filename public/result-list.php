@@ -20,7 +20,7 @@
             foreach ($directories as $directory) {
                 $result_dir = str_replace($root_directory, '', $directory);
                 $result_url = "http://" . $request_host . "/" . $result_dir;
-                echo '<a href="' . $result_url . '" rel="home">' . str_replace($root_directory, '', $directory) . '</a>' . "<br>";
+                echo '<a href="' . $result_url . '" rel="home">' . $result_dir . '</a>' . "<br>";
             }
         ?>
     </body>

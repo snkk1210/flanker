@@ -35,7 +35,7 @@
                         echo "<br>";
                     }
                     echo '<strong><a href="' . $result_url . '" target="_blank" rel="noopener noreferrer">' . str_replace('/', '# ', $result_dir) . '</a></strong>';
-                    echo "<table border='1'>";
+                    echo '<table border="1"><tr><th>Time</th><th>URL</th></tr>';
                 }
             }
         ?>

@@ -21,10 +21,14 @@
                 $result_dir = str_replace($root_directory, '', $directory);
                 $result_url = "http://" . $request_host . "/" . $result_dir;
 
+                $pattern = '/\/(\d+)\/(\d+):/';
+                preg_match($pattern, $result_dir, $matches);
+                $timestamp = date('H:i:s', strtotime($matches[2]));
+
                 $slash_count = substr_count($result_dir, '/');
 
                 if ($slash_count >= 2) {
-                    echo '<tr><td><a href="' . $result_url . '" target="_blank" rel="noopener noreferrer">' . $result_dir . '</a></td></tr>';
+                    echo '<tr><td>' . $timestamp . '</td><td><a href="' . $result_url . '" target="_blank" rel="noopener noreferrer">' . $result_dir . '</a></td></tr>';
                 } else {
                     if ($key != 0) {
                         echo "</table>";

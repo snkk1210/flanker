@@ -12,7 +12,8 @@
         </div>
         <?php
             require('../lib/Common.php');
-            $request_host = $_SERVER['SERVER_ADDR'];
+            $request_referer = parse_url($_SERVER['HTTP_REFERER']);
+            $request_host = $request_referer["host"];
 
             $root_directory = '/var/www/html';
             $directories = Common::getDirectories($root_directory);

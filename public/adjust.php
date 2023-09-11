@@ -93,7 +93,7 @@
                 echo "</table>";
                 echo "<input type='hidden' name='scenario' value=" . $_GET['scenario'] . ">";
                 echo "<input type='hidden' name='key' value=" . $i . ">";
-                echo "<input type='submit' value='update' id='adjust' class='button' />";
+                echo "<input type='submit' value='update' id='adjust' class='button'>";
                 echo "<br>";
                 echo "<br>";
                 echo "</form>";

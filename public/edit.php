@@ -26,7 +26,7 @@
                 $remote_hosts_csv = JMeter::getRemoteHostRaw();
                 ?>
                 <textarea name="remote_hosts" class="remotehost"><?php echo $remote_hosts_csv ?></textarea>
-                <input type="submit" value="update" class="remoteupdate"/>
+                <input type="submit" value="update" class="remoteupdate">
             </form>
         </div>
     </body>

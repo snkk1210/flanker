@@ -32,8 +32,8 @@
         ?>
         <div>
             <form enctype="multipart/form-data" action="" method="POST">
-                <input name="scenariofile" type="file" accept=".jmx" />
-                <input type="submit" value="upload" />
+                <input name="scenariofile" type="file" accept=".jmx">
+                <input type="submit" value="upload">
             </form>
         </div>
         <div>
@@ -47,9 +47,9 @@
                         }
                         ?>
                     </select>
-                    <input type="submit" value="start" onclick="loading()" id="run" formaction="run.php" class="button" />
-                    <input type="submit" value="delete" onclick="deleteAlert(event);return false;" id="delete" formaction="delete.php" class="button delete-btn" />
-                    <input type="submit" value="adjust" id="adjust" formaction="adjust.php" class="button" />
+                    <input type="submit" value="start" onclick="loading()" id="run" formaction="run.php" class="button">
+                    <input type="submit" value="delete" onclick="deleteAlert(event);return false;" id="delete" formaction="delete.php" class="button delete-btn">
+                    <input type="submit" value="adjust" id="adjust" formaction="adjust.php" class="button">
                 </td>
             </form>
         </div>

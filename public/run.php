@@ -33,7 +33,7 @@
         }
         ?>
         <textarea class="results" rows="50" readonly><?php
-                foreach ( $opts as $opt ) {
+                foreach ($opts as $opt) {
                     echo $opt . "\n";
                 }
             ?></textarea>

@@ -42,7 +42,7 @@
                     <select name="scenario" id="" class="">
                         <?php
                         $scenariolists = JMeter::getScenarioFileList();
-                        foreach ( $scenariolists as $scenariolist ) {
+                        foreach ($scenariolists as $scenariolist) {
                             echo '<option value="', $scenariolist, '">', $scenariolist, '</option>';
                         }
                         ?>

@@ -19,7 +19,9 @@
         session_start();
         $_SESSION['loadflag'] = "false";
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            // Check if it is a jmx file.
             if (is_uploaded_file($_FILES['scenariofile']['tmp_name']) && pathinfo($_FILES['scenariofile']['name'], PATHINFO_EXTENSION) == "jmx") {
+                // Check if the file name contains spaces.
                 if (strpos($_FILES['scenariofile']['name'], ' ') !== false) {
                     error_log("Upload File cannot contain spaces.");
                 } else {

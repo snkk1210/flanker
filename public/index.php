@@ -15,6 +15,7 @@
         </div>
         <?php
         require('../lib/JMeter.php');
+        require('../lib/Common.php');
 
         session_start();
         $_SESSION['loadflag'] = "false";
@@ -24,15 +25,18 @@
                 // Check if the file name contains spaces.
                 if (strpos($_FILES['scenariofile']['name'], ' ') !== false) {
                     error_log("Upload File cannot contain spaces.");
+                    Common::displayAlert("Upload File cannot contain spaces.");
                 } else {
                     $uploaddir = '../upload/';
                     $uploadfile = $uploaddir . basename($_FILES['scenariofile']['name']) . ":" . date('Ymd-His');
                     if (!move_uploaded_file($_FILES['scenariofile']['tmp_name'], $uploadfile)) {
                         error_log("File upload has failed.");
+                        Common::displayAlert("File upload has failed.");
                     }
                 }
             } else {
                 error_log("Upload File must be jmx.");
+                Common::displayAlert("Upload File must be jmx.");
             }
         }
         ?>

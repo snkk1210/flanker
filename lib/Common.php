@@ -52,6 +52,19 @@ class Common
 
         return $directories;
     }
+
+    /**
+     * NOTE: Display Alert
+     * @param string $message
+     */
+    public static function displayAlert($message)
+    {
+        echo <<<EOM
+        <script type="text/javascript">
+            window.alert('$message'); 
+        </script>
+        EOM;
+    }
 }
 
 ?>

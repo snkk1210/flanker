@@ -64,6 +64,8 @@ class Common
             window.alert('$message'); 
         </script>
         EOM;
+
+        return 0;
     }
 }
 

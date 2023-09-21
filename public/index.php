@@ -16,6 +16,7 @@
         <?php
         require('../lib/JMeter.php');
         require('../lib/Common.php');
+        require('../lib/Logger.php');
 
         session_start();
         $_SESSION['loadflag'] = "false";
@@ -24,18 +25,18 @@
             if (is_uploaded_file($_FILES['scenariofile']['tmp_name']) && pathinfo($_FILES['scenariofile']['name'], PATHINFO_EXTENSION) == "jmx") {
                 // Check if the file name contains spaces.
                 if (strpos($_FILES['scenariofile']['name'], ' ') !== false) {
-                    error_log("Upload File cannot contain spaces.");
+                    Logger::warn("Upload File cannot contain spaces.");
                     Common::displayAlert("Upload File cannot contain spaces.");
                 } else {
                     $uploaddir = '../upload/';
                     $uploadfile = $uploaddir . basename($_FILES['scenariofile']['name']) . ":" . date('Ymd-His');
                     if (!move_uploaded_file($_FILES['scenariofile']['tmp_name'], $uploadfile)) {
-                        error_log("File upload has failed.");
+                        Logger::warn("File upload has failed.");
                         Common::displayAlert("File upload has failed.");
                     }
                 }
             } else {
-                error_log("Upload File must be jmx.");
+                Logger::warn("Upload File must be jmx.");
                 Common::displayAlert("Upload File must be jmx.");
             }
         }

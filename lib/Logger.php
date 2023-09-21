@@ -3,7 +3,8 @@
 class Logger
 {
     /**
-     * NOTE: 
+     * NOTE: Output error log
+     * @param string $message
      */
     public static function error($message)
     {
@@ -12,7 +13,8 @@ class Logger
     }
 
     /**
-     * NOTE: 
+     * NOTE: Output warn log
+     * @param string $message
      */
     public static function warn($message)
     {
@@ -21,7 +23,8 @@ class Logger
     } 
 
     /**
-     * NOTE: 
+     * NOTE: Output info log
+     * @param string $message
      */
     public static function info($message)
     {
@@ -30,7 +33,8 @@ class Logger
     }
 
     /**
-     * NOTE: 
+     * NOTE: Output debug log
+     * @param string $message
      */
     public static function debug($message)
     {

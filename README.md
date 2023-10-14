@@ -31,7 +31,7 @@ https://github.com/snkk1210/jmeter-MS
 
 ## Version
 
-release/0.0.7
+release/0.0.8
 
 ・実行結果を ZIP でダウンロードする機能を追加しました。  
 ・JMeter の停止機能を追加しました。  
